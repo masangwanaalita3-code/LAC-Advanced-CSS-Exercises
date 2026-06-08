@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jane Doe - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Overall layout uses CSS Grid -->
+  <div class="container">
+    
+    <!-- 1. Navigation Bar - Flexbox -->
+    <nav>
+      <div class="logo">Jane Doe</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <section id="hero" class="hero">
+      <h1>Jane Doe</h1>
+      <p class="tagline">Frontend Developer & UI Designer</p>
+      <a href="#contact" class="cta-btn">Get In Touch</a>
+    </section>
+
+    <!-- 3. About Section -->
+    <section id="about" class="about">
+      <div class="about-content">
+        <img src="https://via.placeholder.com/300x300" alt="Profile Photo" class="profile-img">
+        <div class="bio">
+          <h2>About Me</h2>
+          <p>I'm a passionate frontend developer with 2 years of experience building responsive, user-friendly web applications. I love turning designs into clean, efficient code and I'm always learning new technologies.</p>
+          <p>When I'm not coding, you'll find me sketching UI ideas or exploring new design trends.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Skills Section - Flexbox layout -->
+    <section id="skills" class="skills">
+      <h2>My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-item">HTML5</div>
+        <div class="skill-item">CSS3</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">React</div>
+        <div class="skill-item">Figma</div>
+        <div class="skill-item">Git</div>
+      </div>
+    </section>
+
+    <!-- 5. Projects Section - CSS Grid layout -->
+    <section id="projects" class="projects">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x250" alt="Project 1">
+          <h3>E-Commerce Site</h3>
+          <p>Fully responsive online store built with HTML, CSS, and JavaScript.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x250" alt="Project 2">
+          <h3>Task Manager App</h3>
+          <p>React-based productivity app with drag-and-drop functionality.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x250" alt="Project 3">
+          <h3>Weather Dashboard</h3>
+          <p>Real-time weather app using OpenWeather API and modern CSS.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x250" alt="Project 4">
+          <h3>Portfolio Template</h3>
+          <p>Clean, customizable portfolio template for creatives and developers.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer>
+      <p>&copy; 2026 Jane Doe. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
