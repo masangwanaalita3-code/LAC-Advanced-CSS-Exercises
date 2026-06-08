@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="week5_ex02_style.css">
+</head>
+<body>
+    <header>
+        <h1>Photo Gallery</h1>
+    </header>
+
+    <!-- Filter Buttons - Flexbox -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+        <button class="filter-btn" data-filter="portraits">Portraits</button>
+        <button class="filter-btn" data-filter="architecture">Architecture</button>
+    </div>
+
+    <!-- Gallery Grid - CSS Grid -->
+    <main class="gallery-grid">
+        <!-- Landscapes -->
+        <div class="gallery-card" data-category="landscapes">
+            <img src="https://picsum.photos/400/300?random=1" alt="Mountain View">
+            <div class="card-info">
+                <h3>Mountain View</h3>
+                <span class="category-tag">Landscapes</span>
+            </div>
+            <div class="overlay">
+                <p>Breathtaking mountain landscape at sunrise</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="landscapes">
+            <img src="https://picsum.photos/400/300?random=2" alt="Ocean Sunset">
+            <div class="card-info">
+                <h3>Ocean Sunset</h3>
+                <span class="category-tag">Landscapes</span>
+            </div>
+            <div class="overlay">
+                <p>Golden hour over the peaceful ocean</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="landscapes">
+            <img src="https://picsum.photos/400/300?random=3" alt="Forest Path">
+            <div class="card-info">
+                <h3>Forest Path</h3>
+                <span class="category-tag">Landscapes</span>
+            </div>
+            <div class="overlay">
+                <p>Serene walking path through ancient forest</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="landscapes">
+            <img src="https://picsum.photos/400/300?random=4" alt="Desert Dunes">
+            <div class="card-info">
+                <h3>Desert Dunes</h3>
+                <span class="category-tag">Landscapes</span>
+            </div>
+            <div class="overlay">
+                <p>Rolling sand dunes under blue sky</p>
+            </div>
+        </div>
+
+        <!-- Portraits -->
+        <div class="gallery-card" data-category="portraits">
+            <img src="https://picsum.photos/400/300?random=5" alt="Smiling Woman">
+            <div class="card-info">
+                <h3>Smiling Woman</h3>
+                <span class="category-tag">Portraits</span>
+            </div>
+            <div class="overlay">
+                <p>Natural portrait with soft lighting</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="portraits">
+            <img src="https://picsum.photos/400/300?random=6" alt="Young Man">
+            <div class="card-info">
+                <h3>Young Man</h3>
+                <span class="category-tag">Portraits</span>
+            </div>
+            <div class="overlay">
+                <p>Studio portrait with dramatic shadows</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="portraits">
+            <img src="https://picsum.photos/400/300?random=7" alt="Child Laughing">
+            <div class="card-info">
+                <h3>Child Laughing</h3>
+                <span class="category-tag">Portraits</span>
+            </div>
+            <div class="overlay">
+                <p>Candid moment of pure joy</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="portraits">
+            <img src="https://picsum.photos/400/300?random=8" alt="Elderly Couple">
+            <div class="card-info">
+                <h3>Elderly Couple</h3>
+                <span class="category-tag">Portraits</span>
+            </div>
+            <div class="overlay">
+                <p>Portrait capturing years of love</p>
+            </div>
+        </div>
+
+        <!-- Architecture -->
+        <div class="gallery-card" data-category="architecture">
+            <img src="https://picsum.photos/400/300?random=9" alt="Modern Building">
+            <div class="card-info">
+                <h3>Modern Building</h3>
+                <span class="category-tag">Architecture</span>
+            </div>
+            <div class="overlay">
+                <p>Sleek glass and steel structure</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="architecture">
+            <img src="https://picsum.photos/400/300?random=10" alt="Historic Bridge">
+            <div class="card-info">
+                <h3>Historic Bridge</h3>
+                <span class="category-tag">Architecture</span>
+            </div>
+            <div class="overlay">
+                <p>Classic stone bridge architecture</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="architecture">
+            <img src="https://picsum.photos/400/300?random=11" alt="City Skyline">
+            <div class="card-info">
+                <h3>City Skyline</h3>
+                <span class="category-tag">Architecture</span>
+            </div>
+            <div class="overlay">
+                <p>Urban skyline at twilight</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="architecture">
+            <img src="https://picsum.photos/400/300?random=12" alt="Traditional House">
+            <div class="card-info">
+                <h3>Traditional House</h3>
+                <span class="category-tag">Architecture</span>
+            </div>
+            <div class="overlay">
+                <p>Charming traditional home design</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryCards = document.querySelectorAll('.gallery-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
